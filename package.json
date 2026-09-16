@@ -1,0 +1,28 @@
+{
+    "scripts":  {
+                    "build:prep":  "webpack --config webpack.prep.config.cjs",
+                    "postinstall":  "node scripts/prep-workspace.js",
+                    "test":  "node --test ./test/abi.test.js"
+                },
+    "publishConfig":  {
+                          "access":  "public"
+                      },
+    "description":  "Token decimal / unit conversion helpers for EVM interviews and internal tooling",
+    "version":  "1.0.3",
+    "files":  [
+                  "src",
+                  "scripts"
+              ],
+    "engines":  {
+                    "node":  "\u003e=18"
+                },
+    "name":  "@stellarshift/token-units",
+    "main":  "src/index.js",
+    "license":  "MIT",
+    "keywords":  [
+                     "ethereum",
+                     "evm",
+                     "erc20",
+                     "decimals"
+                 ]
+}
