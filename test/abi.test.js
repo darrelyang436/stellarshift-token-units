@@ -2,13 +2,9 @@
 
 const test = require("node:test");
 const assert = require("node:assert/strict");
-const abi = require("../src");
+const units = require("../src");
 
-test("encode/decode address", () => {
-  const addr = "0x0000000000000000000000000000000000000001";
-  assert.equal(abi.decodeAddress(abi.encodeAddress(addr)), addr);
-});
-
-test("encode uint256", () => {
-  assert.equal(abi.encodeUint256(1n).endsWith("1"), true);
+test("toWei/fromWei", () => {
+  assert.equal(units.toWei(1n, 18), 10n ** 18n);
+  assert.equal(units.fromWei(10n ** 18n, 18), 1n);
 });
